@@ -50,16 +50,11 @@ static void aic3212_write_addr(struct aic3212_dev *dev, aic_addr addr,uint8_t da
 /***************************************************************************//**
  * @brief Initializes the device.
  *
- * @param aic3212 - Device version.
- *                 Example: AD5684  - 12-bit DAC(no internal vRef).
- *                          AD5686  - 16-bit DAC(no internal vRef).
- *                          AD5684R - 12-bit DAC(with internal vRef).
- *                          AD5685R - 14-bit DAC(with internal vRef).
- *                          AD5685R - 16-bit DAC(with internal vRef).
- *
+ * @param device - Data structure for SPI functions (Depends to your machine)
+ * @param init_param - The other parameters of SPI
  * @return status - Result of the initialization procedure.
- *                  Example: 0x0 - SPI peripheral was not initialized.
- *                           0x1 - SPI peripheral is initialized.
+ *                  Example: 0x0 - SPI peripheral not initialized.
+ *                           0x1 - SPI peripheral initialized.
 *******************************************************************************/
 uint32_t aic3212_setup(struct aic3212_dev **device,
                           struct aic3212_init_param * init_param)
